@@ -77,6 +77,7 @@ src/test/java/com/likelion/banking/
 ```
 // TODO: 슬라이드대로 동작 설정 문법 작성하기
 
+given(mock.method()).willReturn(value);
 
 ```
 
@@ -85,13 +86,17 @@ src/test/java/com/likelion/banking/
 ```
 // TODO: 슬라이드대로 메서드 호출 검증 문법 작성하기
 
-
+verify(mock).method;
+verify(mock, never()).method();
+verify(mock, times(2)).method();
 ```
 
 ### 3. 예외 발생
 ```
 // TODO: 슬라이드대로 예외 던지는 문법 작성하기
 
+given(mock.method());
+.willThorw(new Exception());
 
 ```
 
@@ -101,6 +106,8 @@ src/test/java/com/likelion/banking/
 ```
 // TODO: 슬라이드대로 동작 설정 문법 작성하기
 
+@Test
+void testName() { }
 
 ```
 
@@ -108,6 +115,9 @@ src/test/java/com/likelion/banking/
 ```
 // TODO: 슬라이드대로 값 검증 문법 작성하기
 
+assertEquals(expected, actual);
+assertTrue(condition);
+assertNotNull(object);
 
 ```
 
@@ -115,6 +125,9 @@ src/test/java/com/likelion/banking/
 ```
 // TODO: 슬라이드대로 예외 던지는 문법 작성하기
 
+assertThorws(Exception.class, () -> {
+        // 예외 발생 코드
+});
 
 
 ```
